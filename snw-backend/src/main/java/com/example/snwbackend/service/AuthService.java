@@ -294,7 +294,7 @@ public class AuthService {
             helper.setTo(user.getEmail());
             helper.setSubject("Verify your email address");
             Context context = new Context();
-            context.setVariable("link", "https://hoagramspring-production.up.railway.app/api/auth/activation/" + user.getId() + "?token=" +token);
+            context.setVariable("link", "https://hoagramspring-production-8c94.up.railway.app/api/auth/activation/" + user.getId() + "?token=" +token);
             final String htmlContent = MailConfig.getTemplateEngine().process("mail-active.html", context);
             helper.setText(htmlContent, true);
             javaMailSender.send(message);
@@ -311,7 +311,7 @@ public class AuthService {
             helper.setTo(user.getEmail());
             helper.setSubject("Reset Password");
             Context context = new Context();
-            context.setVariable("link", "https://hoagramspring-production.up.railway.app/api/auth/reset-password/" + user.getId() + "?token=" +token);
+            context.setVariable("link", "https://hoagramspring-production-8c94.up.railway.app/api/auth/reset-password/" + user.getId() + "?token=" +token);
             final String htmlContent = MailConfig.getTemplateEngine().process("mail-password.html", context);
             helper.setText(htmlContent, true);
 //            message.setContent(htmlContent, "text/html");
